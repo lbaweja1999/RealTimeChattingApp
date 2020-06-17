@@ -4,34 +4,63 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="center"
     android:orientation="vertical"
+    android:gravity="center"
     tools:context=".MainActivity">
-
-    <EditText
-        android:id="@+id/editText"
+      <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:ems="10"
-        android:hint="Email"
-        android:inputType="textEmailAddress" />
+        android:hint="Email*"
+        app:hintTextAppearance="@style/MyHintStyle"
+        android:textColorHint="@color/colorPrimary"
+        android:clickable="true"
+        style="@style/LoginTextInputLayoutStyle"
+        android:layout_marginHorizontal="20dp"
+        >
 
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/editText"
+            android:layout_width="match_parent"
+            android:textColor="@color/colorPrimary"
+
+            android:layout_height="wrap_content"
+            android:inputType="textEmailAddress"
+            />
+    </com.google.android.material.textfield.TextInputLayout>
     <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:passwordToggleEnabled="true">
+        android:layout_marginTop="10dp"
+        android:hint="Password*"
+
+        app:hintTextAppearance="@style/MyHintStyle"
+        android:textColorHint="@color/colorPrimary"
+        app:passwordToggleEnabled="true"
+        style="@style/LoginTextInputLayoutStyle"
+        android:layout_marginHorizontal="20dp"
+        >
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/editText2"
+            android:layout_below="@+id/editText"
+            android:textColor="@color/colorPrimary"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Password"
-            android:inputType="textPassword" />
+            android:inputType="textPassword"
+            />
     </com.google.android.material.textfield.TextInputLayout>
 
+
     <Button
-        android:id="@+id/button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="SignUp/login" />
+        android:layout_marginTop="10dp"
+        android:layout_centerHorizontal="true"
+        android:text="Signup/Login"
+        style="@style/Mybutton"
+        android:background="@drawable/button"
+        android:id="@+id/button"
+        tools:ignore="NotSibling"></Button>
+
+
 </LinearLayout>
